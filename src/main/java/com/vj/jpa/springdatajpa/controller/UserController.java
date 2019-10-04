@@ -18,17 +18,22 @@ public class UserController {
     private UserService userService;
 
     @GetMapping("/all")
-    public List<User> getAllUsers(){
+    public List<User> getAllUsers() {
         return userService.findAll();
     }
 
     @GetMapping("/getUserByProfession/{profession}")
-    public List<User> findByProfession(@PathVariable String profession){
-     return userService.findByProfession(profession);
+    public List<User> findByProfession(@PathVariable String profession) {
+        return userService.findByProfession(profession);
     }
 
     @GetMapping("/getUserByAge/{age}")
-    public List<User> findByAge(@PathVariable int age){
+    public List<User> findByAge(@PathVariable int age) {
         return userService.findPeopleWhoseAgeGreaterThen20(age);
+    }
+
+    @GetMapping("/findByID/{id}")
+    public User findById(@PathVariable int id) {
+        return userService.findOne(id);
     }
 }

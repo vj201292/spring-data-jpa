@@ -15,6 +15,10 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     @Query("select u from User u where u.age>?1")
     List<User> getAgeGreaterThen20(int age);
 
+      User getOne(Integer id);
+
+
+
 
 
 

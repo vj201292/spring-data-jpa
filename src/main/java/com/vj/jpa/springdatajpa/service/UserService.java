@@ -17,7 +17,6 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-
     List<User> users = Arrays.asList(
             new User(111, "x", "IT", 23),
             new User(222, "y", "HD", 24),
@@ -43,5 +42,9 @@ public class UserService {
 
     public List<User> findPeopleWhoseAgeGreaterThen20(int age){
      return userRepository.getAgeGreaterThen20(age);
+    }
+
+    public User findOne(Integer id){
+        return userRepository.getOne(id);
     }
 }
